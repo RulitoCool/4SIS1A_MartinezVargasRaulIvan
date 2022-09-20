@@ -1,0 +1,60 @@
+Algoritmo tareadeparoimpar
+	Definir a,b,c,num,op,op1 Como Entero
+		Definir discr,part1,part2 como real
+		Repetir
+			Escribir"MENU DE OPCIONES";
+			Escribir "1-Par o impar "
+			Escribir "2-fecuacion cuadratica"
+			Escribir "Ingrese una opcion: "
+			Leer op;
+			Segun op Hacer
+				1:
+					Repetir
+						Para x<-1 Hasta 9 Con Paso 1 Hacer
+							Escribir "ingrese un numero"
+							Leer num
+							
+							Si num mod 2=0 Entonces
+								Escribir num, " el numero es par"
+							SiNo
+								Escribir num, " el numero es impar"
+							Fin Si
+						Fin Para
+						Escribir "desa seguir con los numeros pares e impares 1.-si 2.-no"
+						Leer op1
+					Hasta Que (op1==2)
+				2:
+					Repetir
+						Escribir sin saltar"Ingrese el coeficiente cuadrático(a)"
+						Leer a;
+						Escribir sin saltar"Ingrese el coeficiente lineal(b):";
+						Leer b;
+						Escribir sin saltar"Ingrese el coeficiente independiente"
+						Leer c;
+						discr<-b^2-4*a*c;
+						partl<-(-b)/(2*a);
+						part2<-raiz(abs(discr))/(2*a);
+						Si discr<0 Entonces
+							
+							Escribir"Raices imaginarias";
+							Escribir"xl:",partl,"+",part2,"i";
+							Escribir"x2:",part1,"-",part2,"i";
+						SiNo				
+							Escribir Sin Saltar"Raices reales";
+							si discr=0 Entonces
+								Escribir "iguales"
+							SiNo
+								Escribir "diferentes"
+							FinSi
+							Escribir"xl:",partl+part2;
+							Escribir"x2:",partl-part2;
+							
+						FinSi
+						Escribir "desa seguir con la ecuacion cuadratica 1.-si 2.-no"
+						Leer op2
+					Hasta Que (op2==2)
+			FinSegun
+			Escribir "desesa regresar la menu principal, 1 para si 2 para no";
+			leer op3;
+		Hasta Que (op3==2)
+FinAlgoritmo
