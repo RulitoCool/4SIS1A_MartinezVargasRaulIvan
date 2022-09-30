@@ -194,9 +194,9 @@ class EstructuraDatos {
                             }
                             v--;
                             for(c=1;c<=2*b-1;c++){
-                                System.out.println("R");
+                                System.out.print("R");
                             }
-                            System.out.println("" + "\n");
+                            System.out.println("");
                         }
                         v = 1;
                         for(b=1;b<=a-1;b++){
@@ -205,9 +205,9 @@ class EstructuraDatos {
                             }
                             v++;
                             for(c=1;c<=2*(a-b)-1;c++){
-                              System.out.println("R");
+                              System.out.print("R");
                             }
-                            System.out.println("");
+                            System.out.print("");
                         }
                         
                     break;
@@ -244,7 +244,7 @@ class EstructuraDatos {
                         valb = entrada.nextFloat();
                         res = vala*valb;
                         System.out.println("el resultado de la operacion es: "+ res);
-                        case 1:
+                        case 4:
                         System.out.println("division");
                         System.out.println("dame un valor");
                         vala = entrada.nextFloat();
