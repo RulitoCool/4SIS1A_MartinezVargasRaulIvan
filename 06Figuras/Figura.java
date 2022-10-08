@@ -6,7 +6,7 @@ import java.lang.Math;
 
 public class Figura {
     double lado, altura, area, perimetro, lado2, lado3, base;
-    int opcion;
+    int opcion;  //Integer.parseInt(variable)
     char letra;
     boolean comprobacion;
     Scanner entrada = new Scanner(System.in);

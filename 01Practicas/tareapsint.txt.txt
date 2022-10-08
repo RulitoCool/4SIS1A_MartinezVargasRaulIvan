@@ -1,60 +1,105 @@
-Algoritmo tareadeparoimpar
-	Definir a,b,c,num,op,op1 Como Entero
-		Definir discr,part1,part2 como real
-		Repetir
-			Escribir"MENU DE OPCIONES";
-			Escribir "1-Par o impar "
-			Escribir "2-fecuacion cuadratica"
-			Escribir "Ingrese una opcion: "
-			Leer op;
-			Segun op Hacer
-				1:
-					Repetir
-						Para x<-1 Hasta 9 Con Paso 1 Hacer
-							Escribir "ingrese un numero"
-							Leer num
-							
-							Si num mod 2=0 Entonces
-								Escribir num, " el numero es par"
-							SiNo
-								Escribir num, " el numero es impar"
-							Fin Si
-						Fin Para
-						Escribir "desa seguir con los numeros pares e impares 1.-si 2.-no"
-						Leer op1
-					Hasta Que (op1==2)
-				2:
-					Repetir
-						Escribir sin saltar"Ingrese el coeficiente cuadrático(a)"
-						Leer a;
-						Escribir sin saltar"Ingrese el coeficiente lineal(b):";
-						Leer b;
-						Escribir sin saltar"Ingrese el coeficiente independiente"
-						Leer c;
-						discr<-b^2-4*a*c;
-						partl<-(-b)/(2*a);
-						part2<-raiz(abs(discr))/(2*a);
-						Si discr<0 Entonces
-							
-							Escribir"Raices imaginarias";
-							Escribir"xl:",partl,"+",part2,"i";
-							Escribir"x2:",part1,"-",part2,"i";
-						SiNo				
-							Escribir Sin Saltar"Raices reales";
-							si discr=0 Entonces
-								Escribir "iguales"
-							SiNo
-								Escribir "diferentes"
-							FinSi
-							Escribir"xl:",partl+part2;
-							Escribir"x2:",partl-part2;
-							
-						FinSi
-						Escribir "desa seguir con la ecuacion cuadratica 1.-si 2.-no"
-						Leer op2
-					Hasta Que (op2==2)
-			FinSegun
-			Escribir "desesa regresar la menu principal, 1 para si 2 para no";
-			leer op3;
-		Hasta Que (op3==2)
+Algoritmo tareados
+	Definir total,a,b,c,n,op,suma Como Entero
+	Definir lado1,lado2,lado3,ar,volu,alt,rd,volumen,cat1,cat2,hip Como real
+    Escribir"menu principal"
+	Escribir "seleccione la opccion a desear"
+	Escribir "1.- para mayor o menor"
+	Escribir "2.- para sumatoria de numeros en secuencia"
+	Escribir "3.- para la hipotenusa de un triangulo cuadrado"
+	Escribir "4.- para determinar el area y volumen de un cilindro "
+	Leer op
+	segun (op) Hacer
+		caso 1:
+		Escribir"Ingresa un numero"
+		leer a,b,c
+			si a > b  y a > c Entonces
+				Escribir "el numero es mayor", a
+			SiNo
+				si b > a y b > c Entonces
+					Escribir " el segundo es mayor", b
+				SiNo
+					si c>a y c>b Entonces
+						Escribir "el tercero es mayor", c
+					SiNo
+				FinSi
+			FinSi
+		FinSi
+		si a < b  y a < c Entonces
+			Escribir "el primero es menor", a
+		SiNo
+			si b < a y b < c Entonces
+				Escribir " el segundo es menor", b
+			SiNo
+				si c<a y c<b Entonces
+					Escribir "el tercero es menor", c
+				SiNo
+				FinSi
+			FinSi
+		FinSi
+		si a = b  o a = c Entonces
+			Escribir "opcion no valida se repite en la primera",a
+		SiNo
+			si b = a o b = c Entonces
+				Escribir "opcion no valida se repite en la segunda",b
+			SiNo
+				si c=a o c=b Entonces
+					Escribir "opcion no valida se repite en la tercera", c
+				SiNo
+				FinSi
+			FinSi
+		FinSi
+	caso 2:
+		suma <- 0
+		para i<-1 Hasta 10 Con Paso 1 Hacer
+			suma <- suma+i
+			
+		FinPara
+		Escribir "la sumatoria de los numero es: ",suma
+	Caso 3:
+		Escribir "Ingrese el lado 1:"
+		Leer lado1
+		Escribir "Ingrese el lado 2:"
+		Leer lado2
+		Escribir "Ingrese el lado 3:"
+		Leer lado3
+		Si lado1>lado2 Entonces
+			cat1<-lado2
+			Si lado1>lado3 Entonces
+				hip<-lado1
+				cat2<-lado3
+			SiNo
+				hip<-lado3
+				cat2<-lado1
+			FinSi
+		SiNo
+			cat1<-lado1
+			Si lado2>lado3 Entonces
+				hip<-lado2
+				cat2<-lado3
+			SiNo
+				hip<-lado3
+				cat2<-lado2
+			FinSi
+		FinSi
+		Si hip^2 = cat1^2 + cat2^2 Entonces
+			ar<-(cat1*cat2)/2
+			Escribir "El area es: ",ar
+		SiNo
+			Escribir "No es un triangulo rectangulo."
+		FinSi
+		
+	caso 4:
+		Escribir "Ingrese el radio: "
+		Leer rd
+		Escribir "Ingrese la altura: "
+		Leer alt
+		ar =  pi*pi*rd*alt + pi*pi*rd*rd
+		volu = pi*rd*rd*alt
+		Escribir "El area del cilindro es: ", ar;
+		Escribir "El volumen del cilindro es:",volu;
+	Fin Segun
+	
 FinAlgoritmo
+
+
+
